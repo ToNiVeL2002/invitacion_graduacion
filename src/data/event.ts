@@ -2,6 +2,13 @@
 // Datos configurables del evento
 // ─────────────────────────────────────────
 
+// Helper para resolver assets estáticos respetando el base path de Vite (GitHub Pages / subcarpetas)
+const getAssetUrl = (path: string) => {
+  const cleanPath = path.startsWith('/') ? path.slice(1) : path
+  const baseUrl = import.meta.env.BASE_URL || '/'
+  return baseUrl.endsWith('/') ? `${baseUrl}${cleanPath}` : `${baseUrl}/${cleanPath}`
+}
+
 export const eventData = {
   // ── Anfitrión ──────────────────────────
   host: 'El Sr. Constantino Veliz Laura y la Sra. Lucinda Benavides de Veliz (+)',
@@ -38,19 +45,19 @@ export const eventData = {
     degree: 'Sbtt. Res. Ingeniero de Sistemas',
     university: 'Escuela Militar de Ingeniería',
     universityShort: 'EMI',
-    logo: '/logos/emi_logo.webp',
-    frontis: '/images/emi_frontis.webp',
-    monumento: '/images/monumentoAJS.webp',
-    photo: '/images/foto_savb_uniforme_militar.webp',
+    logo: getAssetUrl('logos/emi_logo.webp'),
+    frontis: getAssetUrl('images/emi_frontis.webp'),
+    monumento: getAssetUrl('images/monumentoAJS.webp'),
+    photo: getAssetUrl('images/foto_savb_uniforme_militar.webp'),
     gallery: [
       {
-        url: '/images/foto_savb_uniforme_militar.webp',
+        url: getAssetUrl('images/foto_savb_uniforme_militar.webp'),
         caption: 'Sbtt. Res. Samuel Antonio Veliz Benavides',
       },
       {
-        url: '/images/foto_antes.webp',
+        url: getAssetUrl('images/foto_antes.webp'),
         caption: 'Recuerdo',
       },
     ],
   },
-} as const
+}
