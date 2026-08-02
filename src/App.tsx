@@ -1,4 +1,4 @@
-import './app.css'
+import './App.css'
 import Hero from './components/Hero'
 import InvitationMessage from './components/InvitationMessage'
 import Graduates from './components/Graduates'
