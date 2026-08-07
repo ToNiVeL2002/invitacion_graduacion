@@ -68,8 +68,10 @@ export default function Hero() {
           transition={{ duration: 0.9, delay: 0.2 }}
         >
           <div
-            className="w-24 h-24 sm:w-32 sm:h-32 rounded-full p-3 bg-white/90 flex items-center justify-center transition-transform duration-300 hover:scale-110 shadow-2xl"
+            className="w-24 h-24 sm:w-32 sm:h-32 rounded-full p-3 bg-white flex items-center justify-center transition-transform duration-300 hover:scale-110 shadow-2xl"
             style={{
+              backgroundColor: '#ffffff',
+              colorScheme: 'light',
               boxShadow:
                 '0 12px 35px rgba(0,0,0,0.6), 0 0 30px rgba(200,162,74,0.4), 0 0 0 3px var(--color-gold)',
             }}
