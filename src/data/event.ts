@@ -26,9 +26,9 @@ export const eventData = {
 
   // ── Ubicación ──────────────────────────
   googleMapsEmbed:
-    'https://maps.google.com/maps?q=Calle%20arrueta%20110%20entre%20Zambrana%20y%20Meriles&t=&z=16&ie=UTF8&iwloc=&output=embed',
+    'https://maps.google.com/maps?q=-19.5830685,-65.7620382&t=&z=16&ie=UTF8&iwloc=&output=embed',
   googleMapsUrl:
-    'https://maps.app.goo.gl/NJsm8cuhr3JscLVD9?g_st=aw',
+    'https://maps.app.goo.gl/ffC9zvC6nZeqCjdq9',
 
   // ── Frases y citas ─────────────────────
   heroQuote:
