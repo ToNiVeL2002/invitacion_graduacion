@@ -1,72 +1,25 @@
-import './App.css'
-import Hero from './components/Hero'
-import InvitationMessage from './components/InvitationMessage'
-import Graduates from './components/Graduates'
-import Countdown from './components/Countdown'
-import EventInfo from './components/EventInfo'
-import Location from './components/Location'
-import Footer from './components/Footer'
-import ScrollProgressBar from './components/ScrollProgressBar'
-import WaveDivider from './components/WaveDivider'
-import GoldParticles from './components/GoldParticles'
-
-// Colores del tema
-const NAVY = '#0B2341'
-const IVORY = '#F8F4EC'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import SamuelInvitation from './pages/SamuelInvitation'
+import CarlaInvitation from './pages/CarlaInvitation'
 
 export default function App() {
   return (
-    <main className="relative">
-      {/* ── Barra de progreso de scroll (siempre visible, arriba del todo) ── */}
-      <ScrollProgressBar />
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
+      <Routes>
+        {/* Invitación de Samuel (Ruta raíz y alias) */}
+        <Route path="/" element={<SamuelInvitation />} />
+        <Route path="/samuel" element={<SamuelInvitation />} />
+        <Route path="/samuel-veliz" element={<SamuelInvitation />} />
+        <Route path="/samuel-antonio-veliz-benavides" element={<SamuelInvitation />} />
 
-      {/* ── Hero ── */}
-      <Hero />
+        {/* Invitación de Carla Mishel Gutierrez Veliz */}
+        <Route path="/carla" element={<CarlaInvitation />} />
+        <Route path="/carla-mishel-gutierrez-veliz" element={<CarlaInvitation />} />
+        <Route path="/carla-gutierrez" element={<CarlaInvitation />} />
 
-      {/* Transición Hero (navy) → InvitationMessage (ivory) */}
-      <WaveDivider fromColor={NAVY} toColor={IVORY} />
-
-      {/* ── Mensaje del Anfitrión ── */}
-      <InvitationMessage />
-
-      {/* Transición InvitationMessage (ivory) → Graduates (navy) */}
-      <WaveDivider fromColor={IVORY} toColor={NAVY} />
-
-      {/* ── Graduados (con partículas flotantes doradas) ── */}
-      <div className="relative overflow-hidden">
-        <GoldParticles count={20} />
-        <Graduates />
-      </div>
-
-      {/* Transición Graduates (navy) → Countdown (ivory) */}
-      <WaveDivider fromColor={NAVY} toColor={IVORY} />
-
-      {/* ── Cuenta Regresiva ── */}
-      <Countdown />
-
-      {/* Transición Countdown (ivory) → EventInfo (navy) */}
-      <WaveDivider fromColor={IVORY} toColor={NAVY} />
-
-      {/* ── Información del Evento (con partículas flotantes doradas) ── */}
-      <div className="relative overflow-hidden">
-        <GoldParticles count={16} />
-        <EventInfo />
-      </div>
-
-      {/* Transición EventInfo (navy) → Location (ivory) */}
-      <WaveDivider fromColor={NAVY} toColor={IVORY} />
-
-      {/* ── Ubicación ── */}
-      <Location />
-
-      {/* Transición Location (ivory) → Footer (navy) */}
-      <WaveDivider fromColor={IVORY} toColor={NAVY} />
-
-      {/* ── Footer (con partículas sutiles) ── */}
-      <div className="relative overflow-hidden">
-        <GoldParticles count={12} />
-        <Footer />
-      </div>
-    </main>
+        {/* Ruta por defecto */}
+        <Route path="*" element={<SamuelInvitation />} />
+      </Routes>
+    </BrowserRouter>
   )
 }

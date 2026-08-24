@@ -63,13 +63,13 @@ export default function GraduateCard({
 
         {/* Insignia / Logo Universitario superpuesto */}
         <div
-          className="absolute bottom-1 -right-1 sm:bottom-2 sm:right-2 w-16 h-16 sm:w-20 sm:h-20 rounded-full p-2.5 bg-white border-2 border-[#C8A24A] flex items-center justify-center z-20 shadow-2xl transition-transform duration-300 hover:scale-110"
+          className="absolute bottom-1 -right-1 sm:bottom-2 sm:right-2 w-16 h-16 sm:w-20 sm:h-20 rounded-full p-2 bg-white border-2 border-[#C8A24A] flex items-center justify-center z-20 shadow-2xl transition-transform duration-300 hover:scale-110 overflow-hidden"
           style={{ boxShadow: '0 8px 25px rgba(0,0,0,0.4)' }}
         >
           <img
             src={logo}
             alt={`Logo ${universityShort}`}
-            className="w-full h-full object-contain"
+            className="w-full h-full object-contain rounded-full"
           />
         </div>
       </div>
